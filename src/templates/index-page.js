@@ -5,6 +5,8 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
+import gold from "../img/EvictionsRecord1-Gold.jpg";
+import patrick from "../img/evictions-patrick-houdek.jpg";
 
 export const IndexPageTemplate = ({
   image,
@@ -140,7 +142,26 @@ const IndexPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
       /> */}
-      <div>Stuff here</div>
+      <div className="bodywrap">
+        <div className="row">
+          <div className="grid12 banner-wrapper">
+            <img
+              className="topmargmobile"
+              style={{ width: "100%" }}
+              src={patrick}
+              alt="the evictions"
+            />
+          </div>
+        </div>
+        <h2 className="banner-headline">New Album 2019</h2>
+        <div className="row">
+          <div className="grid12">
+            <a href="https://theevictions.bandcamp.com/album/evictions">
+              <img style={{ width: "100%" }} src={gold} alt="the evictions" />
+            </a>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };

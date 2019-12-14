@@ -4,6 +4,7 @@ import facebook from "../img/fb1.png";
 import instagram from "../img/insta1.png";
 import youtube from "../img/yt1.png";
 import mail from "../img/mail.png";
+import { Link } from "gatsby";
 
 const Navbar = () => {
   return (
@@ -70,9 +71,9 @@ const Navbar = () => {
         <div className="row group">
           <nav className="grid6">
             <div className="logo hide-phone">
-              <a href="index.html">
+              <Link to="/">
                 <img src={theevictions} alt="The Evictions" />
-              </a>
+              </Link>
             </div>
           </nav>
           <nav className="grid6">
@@ -83,19 +84,19 @@ const Navbar = () => {
             </div>
             <ul className="social">
               <li>
-                <a href="index.html">Home</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a href="shows.html">Shows</a>
+                <Link to="/shows">Shows</Link>
               </li>
               <li>
-                <a href="music.html">Music</a>
+                <Link to="/music">Music</Link>
               </li>
               <li>
-                <a href="videos.html">Videos</a>
+                <Link to="/videos">Videos</Link>
               </li>
               <li>
-                <a href="photos.html">Photos</a>
+                <Link to="/photos">Photos</Link>
               </li>
               <li>
                 <a href="https://www.facebook.com/theevictions">
