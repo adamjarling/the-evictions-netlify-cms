@@ -145,7 +145,6 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
         albums={frontmatter.albums}
       />
     </Layout>
@@ -175,7 +174,6 @@ export const pageQuery = graphql`
           }
         }
         heading
-        subheading
         albums {
           image {
             childImageSharp {
