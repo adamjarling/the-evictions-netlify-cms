@@ -1,0 +1,321 @@
+@charset "UTF-8";
+/* CSS Document */
+body {
+  background: #000;
+}
+/* Header */
+.forward {
+  position: fixed;
+  z-index: 1002;
+  box-shadow: 0px 0px 80px #000;
+}
+
+.logo img {
+  width: 200px;
+}
+
+.social img {
+  width: 30px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+/* Home */
+.banner-wrapper {
+  position: relative;
+}
+
+.banner-headline {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 5px 5px 5px #000000;
+  color: #fff;
+  position: absolute;
+  bottom: 30%;
+}
+
+/* TV */
+.tvtophide {
+  position: fixed;
+  top: 0px;
+  z-index: 1001;
+  height: 429px;
+}
+
+.tv {
+  position: fixed;
+  top: 0px;
+  z-index: 1001;
+  height: 100%;
+}
+
+/* Blog */
+/* .bluestat {
+  position: relative;
+  top: 485px;
+  background: url(../img/static.jpg);
+  height: 420px;
+} */
+
+.deets {
+  position: relative;
+  top: 140px;
+  left: -22px;
+}
+
+.tp-banner-container {
+  border: 8px solid #d1d1d1;
+  background: #d1d1d1;
+}
+/* randomizer */
+.rando {
+  float: left;
+  margin: 3px;
+}
+
+/* footer */
+.hidestamp {
+  position: fixed;
+  z-index: 1002;
+  bottom: 0;
+  box-shadow: 0px 0px 80px #000;
+}
+.bottom {
+  margin: 25px auto 0 auto;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  color: #eee;
+  line-height: 25px;
+  padding: 0 20px;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bottom h1,
+.bottom h2,
+.bottom h3,
+.bottom h4,
+.bottom h5,
+.bottom h6 {
+  margin: 0 auto;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  color: #eee;
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bottom a {
+  color: #ccc;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.bottom span {
+  color: #ccc;
+  font-size: 11px;
+}
+
+/* Switch */
+.onoffswitch {
+  position: relative;
+  width: 91px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+  display: none;
+}
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+}
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 27px;
+  padding: 0;
+  line-height: 27px;
+  font-size: 10px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+  content: "";
+  padding-left: 8px;
+  background-color: #000000;
+  color: #ffffff;
+}
+.onoffswitch-inner:after {
+  content: "CHICAGO";
+  padding-right: 8px;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: right;
+}
+.onoffswitch-switch {
+  display: block;
+  width: 22px;
+  margin: 4.5px;
+  background: #ffffff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 60px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px;
+}
+
+.switchposish {
+  float: right;
+  margin: -33px 0px;
+}
+
+/* Music Page */
+/* Top padding */
+.bg {
+  padding-top: 125px;
+}
+/* Load gif */
+/* .rando {
+  background:url(../img/ripple.gif) center center no-repeat;
+ } */
+/* lazyload animation */
+.teaser.lazyload {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.teaser.lazyloaded {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 700ms;
+}
+
+/* music pagination */
+.mlist {
+  list-style: none;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+.mlist li {
+  display: inline-block;
+  font-weight: bold;
+}
+.mlist li a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* artists */
+.artistwrap {
+  max-width: 960px !important;
+}
+
+.artistwrap a {
+  text-decoration: none;
+}
+
+.artisthead h1 {
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.colwhite {
+  color: #fff;
+}
+.center {
+  text-align: center;
+}
+
+.subtit {
+  font-size: 24px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hide-desktop {
+  display: none !important;
+}
+
+/* .homeimg {
+  background-image: url(../img/live.jpg);
+  background-size: cover;
+  background-position: center;
+} */
+
+.homeimg2 {
+  background-image: url(../img/the-evictions-all.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.topmargmobile {
+  margin-top: auto;
+}
+
+/* Visibliity set up on tablet */
+@media only screen and (max-width: 770px) {
+  /* .homeimg {
+    background-image: url(../img/live2.jpg);
+  } */
+}
+
+/* Visibliity set up on phone */
+@media only screen and (max-width: 767px) {
+  /* TV */
+  .tvtophide {
+    height: 209px;
+  }
+  .subtit {
+    font-size: 16px;
+  }
+  .hide-desktop {
+    display: block !important;
+  }
+  .hide-phone {
+    display: none !important;
+  }
+  .topmargmobile {
+    margin-top: 50px;
+  }
+}
+
+/* Print */
+@media print {
+}
