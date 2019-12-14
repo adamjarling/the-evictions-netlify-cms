@@ -60,6 +60,23 @@ collections:
                   { label: Url, name: url, widget: string },
                 ],
             }
+      - file: "src/pages/photos/index.md"
+        label: "Photos"
+        name: "photos"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "photos-page",
+            }
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: Items,
+              name: items,
+              widget: list,
+              fields: [{ label: Image, name: image, widget: image }],
+            }
       # - file: "src/pages/index.md"
       #   label: "Landing Page"
       #   name: "index"

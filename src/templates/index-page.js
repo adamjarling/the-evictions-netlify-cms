@@ -20,8 +20,8 @@ export const IndexPageTemplate = ({ image, heading, albums = [] }) => (
     </div>
     <h2 className="banner-headline">{heading}</h2>
 
-    {albums.map(album => (
-      <div className="row">
+    {albums.map((album, i) => (
+      <div className="row" key={`album.text-${i}`}>
         <div className="grid12">
           <a href={album.url} target="_blank">
             <Img fluid={album.image.childImageSharp.fluid} />
