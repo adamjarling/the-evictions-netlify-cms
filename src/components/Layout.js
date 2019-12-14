@@ -2,13 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-//import './all.sass'
 import "bulma/css/bulma.css";
 import "../styles/style.css";
 import "../styles/animate.css";
 import "../styles/masterstyle.css";
 import "../styles/custom.css";
 import "../styles/hover.css";
+import "../styles/new-custom.scss";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 

@@ -1,13 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import gold from "../img/EvictionsRecord1-Gold.jpg";
-import patrick from "../img/evictions-patrick-houdek.jpg";
 
-export const IndexPageTemplate = ({ image, title, heading, albums }) => (
+export const IndexPageTemplate = ({ image, heading, albums = [] }) => (
   <div className="bodywrap">
     <div className="row">
       <div className="grid12 banner-wrapper">
@@ -22,13 +19,17 @@ export const IndexPageTemplate = ({ image, title, heading, albums }) => (
       </div>
     </div>
     <h2 className="banner-headline">{heading}</h2>
-    <div className="row">
-      <div className="grid12">
-        <a href="https://theevictions.bandcamp.com/album/evictions">
-          <img style={{ width: "100%" }} src={gold} alt="the evictions" />
-        </a>
+
+    {albums.map(album => (
+      <div className="row">
+        <div className="grid12">
+          <a href={album.url} target="_blank">
+            <Img fluid={album.image.childImageSharp.fluid} />
+          </a>
+          <h3 className="has-text-centered has-text-white">{album.text}</h3>
+        </div>
       </div>
-    </div>
+    ))}
   </div>
   // <div>
   //   <div
@@ -132,13 +133,7 @@ export const IndexPageTemplate = ({ image, title, heading, albums }) => (
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array
-  })
+  heading: PropTypes.string
 };
 
 const IndexPage = ({ data }) => {
@@ -150,28 +145,9 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
+        subheading={frontmatter.subheading}
         albums={frontmatter.albums}
       />
-      {/* <div className="bodywrap">
-        <div className="row">
-          <div className="grid12 banner-wrapper">
-            <img
-              className="topmargmobile"
-              style={{ width: "100%" }}
-              src={patrick}
-              alt="the evictions"
-            />
-          </div>
-        </div>
-        <h2 className="banner-headline">New Album 2019</h2>
-        <div className="row">
-          <div className="grid12">
-            <a href="https://theevictions.bandcamp.com/album/evictions">
-              <img style={{ width: "100%" }} src={gold} alt="the evictions" />
-            </a>
-          </div>
-        </div>
-      </div> */}
     </Layout>
   );
 };
@@ -199,15 +175,17 @@ export const pageQuery = graphql`
           }
         }
         heading
+        subheading
         albums {
           image {
             childImageSharp {
-              fluid(maxWidth: 240, quality: 64) {
+              fluid(maxWidth: 1600, quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }
           }
           text
+          url
         }
       }
     }
