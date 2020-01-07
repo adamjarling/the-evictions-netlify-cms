@@ -3,11 +3,7 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
-import rnrmarket from "../img/shows/rockandrollmarket.jpg";
-import raw from "../img/shows/rawfest.jpg";
-import sonics from "../img/shows/the-sonics.jpg";
-import cheetah from "../img/shows/cheetah-chrome-2.jpg";
-import cheetah2 from "../img/shows/cheetah-chrome-1.jpg";
+
 import Helmet from "react-helmet";
 
 export const ShowsPageTemplate = ({ title, pastShowPosters = [] }) => (
