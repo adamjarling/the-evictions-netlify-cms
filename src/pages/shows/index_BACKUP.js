@@ -5,10 +5,14 @@ import raw from "../../img/shows/rawfest.jpg";
 import sonics from "../../img/shows/the-sonics.jpg";
 import cheetah from "../../img/shows/cheetah-chrome-2.jpg";
 import cheetah2 from "../../img/shows/cheetah-chrome-1.jpg";
+import Helmet from "react-helmet";
 
 const Shows = () => {
   return (
     <Layout>
+      <Helmet>
+        <script src="//widget.songkick.com/widget.js"></script>
+      </Helmet>
       <div className="fullpage bg">
         <div className="bodywrap">
           <h1 className="colwhite center subtit">Shows</h1>
@@ -25,7 +29,7 @@ const Shows = () => {
               >
                 The Evictions Shows
               </a>
-              <script src="//widget.songkick.com/widget.js"></script>
+              {/* <script src="//widget.songkick.com/widget.js"></script> */}
             </div>
           </div>
           <h1 className="colwhite center subtit">Past Shows</h1>

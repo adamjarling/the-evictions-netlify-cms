@@ -219,21 +219,25 @@ nav a#pull {
     display: none;
     height: auto;
   }
+  nav ul.open {
+    display: block;
+  }
   nav a#pull {
     display: block;
     width: 100%;
     position: relative;
   }
-  /* nav a#pull:after {
-		content: "";
-		background: url('../img/nav-w.png') no-repeat;
-		width: 30px;
-		height: 30px;
-		display: inline-block;
-		position: absolute;
-		right: 15px;
-		top: 10px;
-	} */
+  nav a#pull:after {
+    content: "";
+    background: url("../img/nav-menu-icon.png") no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+  }
   nav li a {
     border-bottom: 1px solid #cccccc;
     border-right: none;

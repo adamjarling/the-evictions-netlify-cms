@@ -3,10 +3,15 @@ import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Layout from "../components/Layout";
+import { HTMLContent } from "../components/Content";
 
-export const IndexPageTemplate = ({ image, heading, albums = [] }) => (
+export const IndexPageTemplate = ({ videoEmbedCode }) => (
   <div className="bodywrap">
-    <div className="row">
+    <div className="home-video-wrapper videoWrapper">
+      <HTMLContent content={videoEmbedCode} />
+    </div>
+
+    {/* <div className="row">
       <div className="grid12 banner-wrapper">
         <img
           className="topmargmobile"
@@ -18,9 +23,9 @@ export const IndexPageTemplate = ({ image, heading, albums = [] }) => (
         />
       </div>
     </div>
-    <h2 className="banner-headline">{heading}</h2>
+    <h2 className="banner-headline">{heading}</h2> */}
 
-    {albums.map((album, i) => (
+    {/* {albums.map((album, i) => (
       <div className="row" key={`album.text-${i}`}>
         <div className="grid12">
           <a href={album.url} target="_blank">
@@ -29,7 +34,7 @@ export const IndexPageTemplate = ({ image, heading, albums = [] }) => (
           <h3 className="has-text-centered has-text-white">{album.text}</h3>
         </div>
       </div>
-    ))}
+    ))} */}
   </div>
   // <div>
   //   <div
@@ -142,6 +147,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
+        videoEmbedCode={frontmatter.videoEmbedCode}
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -166,6 +172,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
+        videoEmbedCode
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
